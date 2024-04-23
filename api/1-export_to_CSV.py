@@ -13,8 +13,10 @@ if __name__ == '__main__':
     todos = requests\
         .get(f'https://jsonplaceholder.typicode.com/users/{userid}/todos')\
         .json()
-    with open(f"{userid}.csv", "a") as f:
-        for tasks in todos:
-            status = tasks.get("completed")
-            title = tasks.get("title")
-            f.write(f'"{userid}","{data}","{status}","{title}"\n')
+    dat = ''
+    for tasks in todos:
+        status = tasks.get("completed")
+        title = tasks.get("title")
+        dat += f'"{userid}","{data}","{status}","{title}"\n'
+    with open(f'{userid}.csv', 'w') as f:
+        f.write(dat)
