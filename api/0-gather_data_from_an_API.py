@@ -6,7 +6,7 @@ Starting with API
 if __name__ == '__main__':
     import requests
     import sys
-    userid = int(sys.argv[1])
+    userid = sys.argv[1]
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = []
     data = requests\
