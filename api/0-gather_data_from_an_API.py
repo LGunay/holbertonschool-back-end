@@ -3,10 +3,10 @@
 Starting with API
 """
 
-import requests
-import sys
 
 if __name__ == '__main__':
+    import requests
+    import sys
     userid = sys.argv[1]
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = []
