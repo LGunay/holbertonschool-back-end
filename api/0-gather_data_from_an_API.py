@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Starting with API
+"""
 
 import requests
 import sys
