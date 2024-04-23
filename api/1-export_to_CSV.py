@@ -18,4 +18,3 @@ if __name__ == '__main__':
             status = tasks.get("completed")
             title = tasks.get("title")
             f.write(f'"{userid}","{data}","{status}","{title}"\n')
-
