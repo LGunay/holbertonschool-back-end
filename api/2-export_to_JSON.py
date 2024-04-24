@@ -20,12 +20,12 @@ if __name__ == '__main__':
             status = tasks.get("completed")
             title = tasks.get("title")
             dicti = {
-                "task" : title,
-                "completed" : status,
-                "username" : data
+                "task": title,
+                "completed": status,
+                "username": data
             }
             dicti_list.append(dicti)
         dicti2 = {
-            userid : dicti_list
+            userid: dicti_list
         }
         f.write(json.dumps(dicti2))
