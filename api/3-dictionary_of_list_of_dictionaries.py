@@ -9,22 +9,21 @@ if __name__ == '__main__':
     dicti_list = []
     dicti2 = {}
     with open(f"todo_all_employees.json", "w") as f:
-        user_count = len(requests.get(f'https://jsonplaceholder.typicode.com\
-                                      /users/').json())
+        uc = f'https://jsonplaceholder.typicode.com/users/'
+        user_count = len(requests.get(uc).json())
         for userid in range(1, user_count+1):
-            data = requests.get(f'https://jsonplaceholder.typicode.com\
-                                /users/{userid}').json().get('username')
-
+            d = f'https://jsonplaceholder.typicode.com/users/{userid}'
+            data = requests.get(d).json().get('username')
+            fu = f'https://jsonplaceholder.typicode.com/users/{userid}/todos'
             todos = requests\
-                .get(f'https://jsonplaceholder.typicode.com/users/{userid}\
-                     /todos').json()
+                .get(fu).json()
             for tasks in todos:
                 status = tasks.get("completed")
                 title = tasks.get("title")
                 dicti = {
+                    "username": data,
                     "task": title,
-                    "completed": status,
-                    "username": data
+                    "completed": status
                 }
                 dicti_list.append(dicti)
             dicti2[userid] = dicti_list
